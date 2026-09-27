@@ -1219,7 +1219,7 @@ function loadData() {
     if (!savedData) {
 
         alert(
-            "Saved data nahi mila."
+            "Saved data not found."
         );
 
         return;
