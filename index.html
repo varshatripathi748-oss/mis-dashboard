@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MIS Report Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="header-left">
+
+        <h1>MIS REPORT DASHBOARD</h1>
+
+        <p>
+            Main Meter & Check Meter Report
+        </p>
+
+    </div>
+
+
+    <div class="header-buttons">
+
+        <button onclick="addRow()">
+            + Add Row
+        </button>
+
+        <button onclick="saveData()">
+            Save Data
+        </button>
+
+        <button onclick="exportCSV()">
+            Export CSV
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= FORMULA INFORMATION ================= -->
+
+<section class="formula-box">
+
+    <h3>Excel Formula Used</h3>
+
+    <p>
+        <b>Actual KWH Consumption:</b>
+        (Next KWH − Current KWH) × 120
+    </p>
+
+    <p>
+        <b>Actual KVAH Consumption:</b>
+        (Next KVAH − Current KVAH) × 120
+    </p>
+
+    <p>
+        <b>Actual KVA (MD):</b>
+        KVA (MD) × 120
+    </p>
+
+    <p>
+        <b>Power Factor:</b>
+        Actual KWH Consumption ÷ Actual KVAH Consumption
+    </p>
+
+</section>
+
+
+
+<!-- ================= MONTH SECTION ================= -->
+
+<section class="month-box">
+
+
+    <div class="input-group">
+
+        <label>
+            Select Month
+        </label>
+
+        <select
+            id="monthSelect"
+            onchange="makeMonthRows()"
+        >
+
+            <option value="0">
+                January
+            </option>
+
+            <option value="1">
+                February
+            </option>
+
+            <option value="2">
+                March
+            </option>
+
+            <option value="3">
+                April
+            </option>
+
+            <option value="4">
+                May
+            </option>
+
+            <option value="5">
+                June
+            </option>
+
+            <option value="6">
+                July
+            </option>
+
+            <option value="7">
+                August
+            </option>
+
+            <option value="8">
+                September
+            </option>
+
+            <option value="9">
+                October
+            </option>
+
+            <option value="10">
+                November
+            </option>
+
+            <option value="11">
+                December
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <div class="input-group">
+
+        <label>
+            Select Year
+        </label>
+
+        <select
+            id="yearSelect"
+            onchange="makeMonthRows()"
+        ></select>
+
+    </div>
+
+
+
+    <button
+        class="generate-btn"
+        onclick="makeMonthRows()"
+    >
+
+        Generate Month
+
+    </button>
+
+
+
+    <button
+        onclick="loadData()"
+    >
+
+        Reload Saved Data
+
+    </button>
+
+
+
+    <button
+        class="clear-btn"
+        onclick="clearData()"
+    >
+
+        Clear Data
+
+    </button>
+
+
+
+    <div
+        id="dayInfo"
+        class="day-info"
+    ></div>
+
+
+</section>
+
+
+
+<!-- ================= TABLE ================= -->
+
+<section class="table-section">
+
+
+<div class="table-container">
+
+
+<table id="reportTable">
+
+
+<thead>
+
+<tr>
+
+    <th>Date</th>
+
+    <th>TIME</th>
+
+
+    <!-- MAIN METER -->
+
+    <th>Main KWH</th>
+
+    <th>Main KVAH</th>
+
+    <th>Actual KWH Consump.</th>
+
+    <th>Actual KVAH Consump.</th>
+
+    <th>KVA (MD)</th>
+
+    <th>Actual KVA (MD)</th>
+
+    <th>PF Display</th>
+
+    <th>PF = KWH/KVAH</th>
+
+
+    <!-- CHECK METER -->
+
+    <th>Check KWH</th>
+
+    <th>Check KVAH</th>
+
+    <th>Check Actual KWH Consump.</th>
+
+    <th>Check Actual KVAH Consump.</th>
+
+    <th>Check KVA (MD)</th>
+
+    <th>Check Actual KVA MD</th>
+
+    <th>Check PF Display</th>
+
+    <th>Check PF = KWH/KVAH</th>
+
+
+    <th>Action</th>
+
+</tr>
+
+</thead>
+
+
+
+<tbody id="tableBody">
+
+</tbody>
+
+
+
+<tfoot>
+
+<tr>
+
+    <td colspan="4">
+
+        <b>Total Consumption</b>
+
+    </td>
+
+
+    <td id="totalMainKwh">
+
+        0
+
+    </td>
+
+
+    <td id="totalMainKvah">
+
+        0
+
+    </td>
+
+
+    <td></td>
+
+    <td></td>
+
+    <td></td>
+
+    <td></td>
+
+
+    <td></td>
+
+    <td></td>
+
+
+    <td id="totalCheckKwh">
+
+        0
+
+    </td>
+
+
+    <td id="totalCheckKvah">
+
+        0
+
+    </td>
+
+
+    <td></td>
+
+    <td></td>
+
+    <td></td>
+
+    <td></td>
+
+    <td></td>
+
+</tr>
+
+</tfoot>
+
+
+</table>
+
+
+</div>
+
+</section>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

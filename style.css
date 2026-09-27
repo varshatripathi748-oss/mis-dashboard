@@ -1,0 +1,400 @@
+/* =========================
+   BASIC
+========================= */
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f3f6f9;
+
+    color: #222;
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+
+    background: #17365d;
+
+    color: white;
+
+    padding: 18px 22px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.header-left h1 {
+
+    margin: 0;
+
+    font-size: 25px;
+
+}
+
+
+.header-left p {
+
+    margin: 6px 0 0;
+
+    font-size: 14px;
+
+}
+
+
+.header-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    border: none;
+
+    border-radius: 5px;
+
+    padding: 9px 14px;
+
+    margin: 3px;
+
+    background: #2f75b5;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+button:hover {
+
+    opacity: 0.85;
+
+}
+
+
+.generate-btn {
+
+    background: #198754;
+
+}
+
+
+.clear-btn {
+
+    background: #dc3545;
+
+}
+
+
+/* =========================
+   FORMULA BOX
+========================= */
+
+.formula-box {
+
+    background: #fff3cd;
+
+    border-bottom: 1px solid #ddd;
+
+    padding: 15px 20px;
+
+}
+
+
+.formula-box h3 {
+
+    margin-top: 0;
+
+}
+
+
+.formula-box p {
+
+    margin: 6px 0;
+
+}
+
+
+/* =========================
+   MONTH BOX
+========================= */
+
+.month-box {
+
+    background: white;
+
+    padding: 15px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+}
+
+
+.input-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.input-group label {
+
+    font-weight: bold;
+
+    font-size: 13px;
+
+}
+
+
+.input-group select {
+
+    min-width: 150px;
+
+    padding: 8px;
+
+    border: 1px solid #aaa;
+
+    border-radius: 5px;
+
+}
+
+
+.day-info {
+
+    font-weight: bold;
+
+    color: #17365d;
+
+    margin-left: 10px;
+
+}
+
+
+/* =========================
+   TABLE SECTION
+========================= */
+
+.table-section {
+
+    padding: 15px;
+
+}
+
+
+.table-container {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    background: white;
+
+    border-radius: 5px;
+
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+
+    border-collapse: collapse;
+
+    width: 100%;
+
+    min-width: 2200px;
+
+}
+
+
+th,
+td {
+
+    border: 1px solid #b7b7b7;
+
+    padding: 5px;
+
+    white-space: nowrap;
+
+    text-align: center;
+
+}
+
+
+th {
+
+    background: #d9eaf7;
+
+    color: #17365d;
+
+    font-weight: bold;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 5;
+
+}
+
+
+tbody tr:nth-child(even) {
+
+    background: #fafafa;
+
+}
+
+
+tbody tr:hover {
+
+    background: #eef6ff;
+
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+input {
+
+    width: 105px;
+
+    padding: 6px;
+
+    border: 1px solid #aaa;
+
+    border-radius: 3px;
+
+}
+
+
+input[type="date"] {
+
+    width: 125px;
+
+}
+
+
+input[type="time"] {
+
+    width: 95px;
+
+}
+
+
+/* =========================
+   CALCULATED CELLS
+========================= */
+
+.calc input {
+
+    background: #eaf3ff;
+
+    font-weight: bold;
+
+    color: #17365d;
+
+}
+
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.delete-btn {
+
+    background: #f4cccc;
+
+    color: #8b0000;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   TOTAL
+========================= */
+
+tfoot td {
+
+    background: #eeeeee;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 800px) {
+
+
+    header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .month-box {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+}
