@@ -1292,7 +1292,7 @@ function clearData() {
 
     const confirmDelete =
         confirm(
-            "Kya aap saved MIS data delete karna chahte hain?"
+            "Do you want to delete the saved missed data?"
         );
 
 
